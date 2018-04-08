@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ml.MainFormController">
+   <right>
+      <AnchorPane fx:id="paneControl" prefHeight="500.0" prefWidth="384.0" BorderPane.alignment="CENTER">
+         <children>
+            <TitledPane animated="false" collapsible="false" expanded="false" layoutX="10.0" layoutY="40.0" prefHeight="177.0" prefWidth="364.0" text="Line 1" textFill="DODGERBLUE" AnchorPane.bottomAnchor="313.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+               <content>
+                  <GridPane alignment="CENTER" prefHeight="150.0" prefWidth="358.0">
+                    <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="94.0" minWidth="10.0" prefWidth="76.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="244.0" minWidth="10.0" prefWidth="195.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" maxWidth="94.0" minWidth="10.0" prefWidth="61.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints maxHeight="36.0" minHeight="10.0" prefHeight="36.0" vgrow="SOMETIMES" />
+                        <RowConstraints maxHeight="46.0" minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="70.0" text="X1" textAlignment="CENTER" />
+                        <Slider fx:id="sliderL1X1" blockIncrement="0.1" max="10.0" min="-10.0" prefHeight="14.0" prefWidth="175.0" GridPane.columnIndex="1" />
+                        <Label fx:id="labelL1X1" alignment="CENTER" prefHeight="17.0" prefWidth="63.0" text="Label" GridPane.columnIndex="2" />
+                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="70.0" text="Y1" textAlignment="CENTER" GridPane.rowIndex="1" />
+                        <Slider fx:id="sliderL1X2" blockIncrement="0.1" max="10.0" min="-10.0" prefHeight="14.0" prefWidth="174.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Label fx:id="labelL1Y1" alignment="CENTER" prefHeight="17.0" prefWidth="63.0" text="Label" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="70.0" text="X2" textAlignment="CENTER" GridPane.rowIndex="2" />
+                        <Slider fx:id="sliderL1Y1" blockIncrement="0.1" max="10.0" min="-10.0" prefHeight="14.0" prefWidth="168.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Label fx:id="labelL1X2" alignment="CENTER" prefHeight="17.0" prefWidth="63.0" text="Label" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="17.0" prefWidth="70.0" text="Y2" textAlignment="CENTER" GridPane.rowIndex="3" />
+                        <Slider fx:id="sliderL1Y2" blockIncrement="0.1" max="10.0" min="-10.0" prefHeight="14.0" prefWidth="168.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <Label fx:id="labelL1Y2" alignment="CENTER" prefHeight="17.0" prefWidth="63.0" text="Label" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                     </children>
+                     <opaqueInsets>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </opaqueInsets>
+                  </GridPane>
+               </content>
+            </TitledPane>
+            <TitledPane animated="false" collapsible="false" layoutX="10.0" layoutY="194.0" prefHeight="177.0" prefWidth="364.0" text="Line 2" textFill="#ff501e" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="195.0">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="143.0" prefWidth="362.0">
+                     <children>
+                        <Label text="Label" />
+                     </children></AnchorPane>
+              </content>
+            </TitledPane>
+            <TitledPane animated="false" collapsible="false" layoutY="382.0" prefHeight="104.0" prefWidth="292.0" text="Intersect Point" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="82.0" AnchorPane.topAnchor="382.0">
+               <content>
+                  <Label fx:id="intersect" text="(x, y)">
+                     <font>
+                        <Font size="18.0" />
+                     </font></Label>
+               </content>
+            </TitledPane>
+            <Button fx:id="reset" layoutX="311.0" layoutY="383.0" mnemonicParsing="false" prefHeight="103.0" prefWidth="63.0" text="RESET" />
+         </children></AnchorPane>
+   </right>
+   <center>
+      <Pane fx:id="paneView" onMouseDragged="#handleMouseDragged" onMouseExited="#handleMouseExited" onMouseMoved="#handleMouseMoved" onMousePressed="#handleMousePressed" onMouseReleased="#handleMouseReleased" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #ffffff;" BorderPane.alignment="CENTER">
+         <children>
+            <Label fx:id="labelCoord" layoutX="5.0" layoutY="5.0" text="(x, y)" />
+            <Line fx:id="line1a" stroke="DODGERBLUE" />
+            <Line fx:id="line1b" stroke="DODGERBLUE" />
+            <Line fx:id="line1c" stroke="DODGERBLUE" />
+            <Line fx:id="line2a" stroke="#ff501e" />
+            <Line fx:id="line2b" stroke="#ff501e" />
+            <Line fx:id="line2c" stroke="#ff501e" />
+            <Circle fx:id="point1a" centerX="250.0" centerY="250.0" fill="DODGERBLUE" layoutY="-139.0" radius="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+            <Circle fx:id="point1b" centerX="250.0" centerY="250.0" fill="DODGERBLUE" layoutY="118.0" radius="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+            <Circle fx:id="point2a" centerX="250.0" centerY="250.0" fill="#ff501e" layoutX="87.0" radius="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+            <Circle fx:id="point2b" centerX="250.0" centerY="250.0" fill="#ff501e" layoutX="-100.0" radius="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+            <Circle fx:id="pointIntersect" centerX="250.0" centerY="250.0" radius="10.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+         </children>
+      </Pane>
+   </center>
+</BorderPane>
