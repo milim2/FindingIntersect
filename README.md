@@ -33,4 +33,4 @@ else             return false;
 
 ### Visuals
 ```
-![pic11](./img/pic11.png)
+![pic11](./pic11.png)
